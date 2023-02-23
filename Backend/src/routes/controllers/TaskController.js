@@ -1,17 +1,19 @@
 const Task= require("../../models/TaskSchema")
 const AddTask=async(req,res,next)=>{
+let data=req.body
+console.log(data)
 try{
-    console.log(req.body.todos,"boduy")
-    let data=req.body.todos
-      const addtask= await Task.create(data)
+        const addtask= await Task.create(data)
         if(!addtask){
             res.status(500).send(addtask)
         }else{
             res.status(200).send(addtask)
-        }
-}catch(e){
-    console.log(e)
-res.status(422).send(e)
+        }   
+   
+}catch(error){
+    console.log(error)
+   res.status(422).send( error)
+
 }
 }
 const GetTask=async(req,res,next)=>{

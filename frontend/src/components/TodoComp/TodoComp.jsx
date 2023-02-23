@@ -13,7 +13,7 @@ export default function TodoComp(){
       if(inputRef.current.value!==""){
             const newTodo =inputRef.current.value;
             setTodo([...todos,{
-              Task:newTodo,
+              name:newTodo,
               completed:false,
               completedTime:"1hour"
             }])
@@ -37,9 +37,10 @@ export default function TodoComp(){
       }
     async function SaveList (){
         try{
-      const addingTask=await  url.post("/Tasks/add",{todos})
+      const addingTask=await  url.post("/Tasks/add",todos)
+      console.log(addingTask,"Tasks added ")
       setTodo(addingTask.data)
-      setErrorMessage("")
+      setErrorMessage()
       if(!addingTask){
         setErrorMessage("Something went wrong while adding list")
       }
@@ -52,7 +53,13 @@ export default function TodoComp(){
       async function getList(){
         try{
           const addingTask=await  url.get("/Tasks/Retrieve",{todos})
-          setTodo(addingTask.data)
+         
+          let newArr=addingTask.data.map(({_id,...rest})=>{
+        return rest
+          
+          })
+          console.log(newArr)
+          setTodo(newArr)
           setErrorMessage("")
           if(!addingTask){
             setErrorMessage("Something went wrong while getting list")
@@ -76,7 +83,7 @@ export default function TodoComp(){
             <ul className="
             ulStyle">
               {todos.map((todo, index) => {
-                console.log(todo)
+                console.log(todo.Task)
     
                 return(
                   <li
@@ -87,7 +94,7 @@ export default function TodoComp(){
                       onChange={(e)=> handleCheckboxChange(e.target.checked,index) }
                       type={"checkbox"}/>
                       <p >
-                      {todo.Task}
+                      {todo.name}
                       </p>
                       <button
                       className="deleteButton"

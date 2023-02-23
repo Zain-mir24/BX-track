@@ -1,7 +1,8 @@
 const mongoose = require('mongoose')
 
-const taskSchema = new mongoose.Schema([{
-    Task: {
+const taskSchema = new mongoose.Schema(
+    {
+    name: {
         type: String,
         required: true,
         trim: true
@@ -14,7 +15,7 @@ const taskSchema = new mongoose.Schema([{
         type:String,
         required:true
     }
-}], {
+}, {
     timestamps: true
 })
 
