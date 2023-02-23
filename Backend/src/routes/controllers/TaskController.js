@@ -1,5 +1,4 @@
 const Task= require("../../models/TaskSchema")
-const ObjectId = require('mongodb').ObjectID;
 const AddTask=async(req,res,next)=>{
 let data=req.body
 console.log(data)
@@ -8,11 +7,9 @@ try{
     for (let i = 0; i < data.length; i++) {
         const { _id, ...update } = data[i];
         if(!_id){
-            console.log("No id",data[i])
         check=await Task.create(data[i])
         }else{
             check= await Task.findByIdAndUpdate({_id:data[i]._id}, update,{upsert:true});
-
         }
       }
         if(!check){
