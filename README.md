@@ -7,7 +7,7 @@ How to setup project
 3. To run backend you will to make a connection in you env file to your local mongo or any cluster if you have. I made this work on my cluster and once you set up db the server will say connected
 
 Project features:
-1. Frontend has an input field wherer you can enter you tas, by clicking on dots you delete it. Press the checkbox to show that you completed the task.
+1. Frontend has an input field where you can enter you task name, by clicking on dots you delete it. Press the checkbox to show that you completed the task.
 2. Upon page refresh you get data from db
 3. Backend allows you to add and retrieve tasks
 
