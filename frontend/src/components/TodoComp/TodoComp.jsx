@@ -36,11 +36,14 @@ export default function TodoComp(){
         }
       }
     async function SaveList (){
+      console.log(todos,
+        )
         try{
       const addingTask=await  url.post("/Tasks/add",todos)
       console.log(addingTask,"Tasks added ")
-      setTodo(addingTask.data)
       setErrorMessage()
+
+      getList()
       if(!addingTask){
         setErrorMessage("Something went wrong while adding list")
       }
@@ -52,11 +55,10 @@ export default function TodoComp(){
       }
       async function getList(){
         try{
-          const addingTask=await  url.get("/Tasks/Retrieve",{todos})
-         
-          let newArr=addingTask.data.map(({_id,...rest})=>{
-        return rest
-          
+          const addingTask=await  url.get("/Tasks/Retrieve")
+         console.log(addingTask.data)
+          let newArr=addingTask.data.map(({...rest})=>{
+         return rest
           })
           console.log(newArr)
           setTodo(newArr)
@@ -83,7 +85,7 @@ export default function TodoComp(){
             <ul className="
             ulStyle">
               {todos.map((todo, index) => {
-                console.log(todo.Task)
+                console.log(todo)
     
                 return(
                   <li
