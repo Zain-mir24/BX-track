@@ -1,11 +1,15 @@
-import './App.css';
-import React,{useState} from 'react';
-import Todo from './Pages/Todo/Todo';
+import "./App.css";
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import BookPanel from "./Pages/Books/Bookpanel";
+import ViewBook from "./Pages/ViewBooks/index"
 function App() {
-
   return (
     <div className="App">
-      <Todo />  
+      <Routes>
+        <Route path="/" element={<BookPanel />} />
+        <Route path="/ViewBooks" element={<ViewBook />} />
+      </Routes>
     </div>
   );
 }

@@ -1,0 +1,9 @@
+.main{
+    background-image: url(../../assets/Books.jpg);
+    height: 100vh;
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: bottom;
+     position: relative;
+     /* margin-top:-20px */
+}
