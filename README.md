@@ -1,5 +1,5 @@
-This Repository is for the cowlar Test.
-This repo contains 2 folders Backedn adn frontend.
+This Repository is for the BXTrack
+This repo contains 2 folders Backeend and frontend.
 
 How to setup project
 1. Go in frontend and backend folder individually and enter npm i
