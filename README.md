@@ -1,10 +1,11 @@
-This Repository is for the cowlar Test.
-This repo contains 2 folders Backedn adn frontend.
+This Repository is for the BXTrack
+This repo contains 2 folders Backeend and frontend.
 
 How to setup project
 1. Go in frontend and backend folder individually and enter npm i
 2. To run Frontend you will have to press npm start
 3. To run backend you will to make a connection in you env file to your local mongo or any cluster if you have. I made this work on my cluster and once you set up db the server will say connected
+4. Enter npm run dev on backend to run 
 
 
 
@@ -14,19 +15,15 @@ there are 4 apis
 http://localhost:5000/Books
 Body should be
 [{
-    "name":"Tasks3",
-    "completed":false,
-    "completedTime":"1hour"
-},
-{
-    "name":"Tasks6",
-    "completed":false,
-    "completedTime":"1hour"
+  "title": "Atomic Habits",
+    "author": "James Clear",
+    "no_of_pages": 12,
+    "published_at": "2023-04-14T12:00:00.000Z",
 }
 ]
 
 2. Update // 
-http://localhost:5000/Tasks/Retrieve
+http://localhost:5000/Books/:id
 Expected result 
 [
   {
