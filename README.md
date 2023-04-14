@@ -5,6 +5,7 @@ How to setup project
 1. Go in frontend and backend folder individually and enter npm i
 2. To run Frontend you will have to press npm start
 3. To run backend you will to make a connection in you env file to your local mongo or any cluster if you have. I made this work on my cluster and once you set up db the server will say connected
+4. Enter npm run dev on backend to run 
 
 
 
