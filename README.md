@@ -14,19 +14,15 @@ there are 4 apis
 http://localhost:5000/Books
 Body should be
 [{
-    "name":"Tasks3",
-    "completed":false,
-    "completedTime":"1hour"
-},
-{
-    "name":"Tasks6",
-    "completed":false,
-    "completedTime":"1hour"
+  "title": "Atomic Habits",
+    "author": "James Clear",
+    "no_of_pages": 12,
+    "published_at": "2023-04-14T12:00:00.000Z",
 }
 ]
 
 2. Update // 
-http://localhost:5000/Tasks/Retrieve
+http://localhost:5000/Books/:id
 Expected result 
 [
   {
